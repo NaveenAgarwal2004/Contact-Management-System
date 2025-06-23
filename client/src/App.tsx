@@ -122,9 +122,9 @@ function App() {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Users size={24} className="text-white" />
-              </div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg">
+              <img src="/4433.jpg" alt="Logo" className="w-full h-full object-contain" />
+            </div>
               <div>
                 <h1 className="text-4xl font-bold text-gray-900">Contact Manager</h1>
                 <p className="text-gray-600 mt-1">Organize and manage your contacts efficiently</p>
