@@ -5,7 +5,7 @@ import { Search, X } from 'lucide-react';
 import axios from 'axios';
 import { ContactFormData } from '../types/Contact';
 
-const BASE_URL = 'http://localhost:5000/api/contacts'; // Adjust if your server uses a different port or path
+const BASE_URL = import.meta.env.VITE_API_URL ||'http://localhost:5000/api/contacts'; // Adjust if your server uses a different port or path
 
 export const contactsApi = {
   async getContacts(search?: string) {

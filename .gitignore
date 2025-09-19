@@ -1,1 +1,111 @@
-node_modules
+# ────────────────
+# ENVIRONMENT VARIABLES
+# ────────────────
+.env
+.env.local
+.env.production
+.env.test
+
+# ────────────────
+# DEPENDENCIES
+# ────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ────────────────
+# RUNTIME DATA
+# ────────────────
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ────────────────
+# LOG FILES
+# ────────────────
+logs/
+*.log
+
+# ────────────────
+# TEST & COVERAGE
+# ────────────────
+coverage/
+*.lcov
+test-files/
+uploads/
+
+# ────────────────
+# BUILD ARTIFACTS
+# ────────────────
+dist/
+build/
+.next/         # Next.js
+.nuxt/         # Nuxt.js
+.cache/        # Gatsby / Parcel
+.parcel-cache/
+public/        # Gatsby build
+.out/          # Storybook
+.storybook-out/
+
+# ────────────────
+# EDITOR / OS FILES
+# ────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ────────────────
+# OPTIONAL NPM/YARN FILES
+# ────────────────
+.npm
+.node_repl_history
+*.tgz
+.yarn-integrity
+
+# ────────────────
+# DOCKER / DEPLOYMENT
+# ────────────────
+.docker/
+.local/
+.serverless/
+.aws/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# ────────────────
+# SSL CERTIFICATES
+# ────────────────
+*.pem
+*.key
+*.crt
+
+# ────────────────
+# DATABASE DUMPS
+# ────────────────
+*.sql
+*.sqlite
+*.db
+
+# ────────────────
+# PM2 CONFIG
+# ────────────────
+ecosystem.config.js
+
+# ────────────────
+# TEMPORARY FOLDERS
+# ────────────────
+tmp/
+temp/
