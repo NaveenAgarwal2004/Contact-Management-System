@@ -295,7 +295,7 @@ export interface ContactListProps {
   onPageChange: (page: number) => void;
   onItemsPerPageChange: (itemsPerPage: number) => void;
   onBulkOperation: (operation: BulkOperation) => void;
-} & BaseContactProps;
+};
 
 // Hook return types
 export interface UseContactsReturn {

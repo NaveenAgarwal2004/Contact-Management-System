@@ -29,7 +29,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<Partial<ContactFormData>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [tagInput, setTagInput] = useState('');
   const [previewAvatar, setPreviewAvatar] = useState<string | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -80,14 +80,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   }, [contact, isOpen]);
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<ContactFormData> = {};
+    const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
+    } else if (formData.firstName.trim().length < 2) {
+      newErrors.firstName = 'First name must be at least 2 characters';
     }
 
     if (!formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required';
+    } else if (formData.lastName.trim().length < 2) {
+      newErrors.lastName = 'Last name must be at least 2 characters';
     }
 
     if (!formData.email.trim()) {
@@ -98,14 +102,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
     if (formData.phone && !/^[\+]?[\s\-\(\)0-9]+$/.test(formData.phone)) {
       newErrors.phone = 'Please enter a valid phone number';
-    }
-
-    if (formData.firstName.trim().length < 2) {
-      newErrors.firstName = 'First name must be at least 2 characters';
-    }
-
-    if (formData.lastName.trim().length < 2) {
-      newErrors.lastName = 'Last name must be at least 2 characters';
     }
 
     setErrors(newErrors);

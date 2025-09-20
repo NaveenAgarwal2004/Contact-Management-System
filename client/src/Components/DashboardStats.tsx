@@ -2,7 +2,7 @@ import React from 'react';
 import { ContactAnalytics } from '../types/Contact';
 import { 
   Users, Star, Building, Tag, TrendingUp, 
-  Calendar, Clock, BarChart3, PieChart 
+  Clock, BarChart3, PieChart 
 } from 'lucide-react';
 
 interface DashboardStatsProps {

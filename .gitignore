@@ -109,3 +109,6 @@ ecosystem.config.js
 # ────────────────
 tmp/
 temp/
+
+render.yaml
+

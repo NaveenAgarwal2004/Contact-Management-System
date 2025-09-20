@@ -2,7 +2,7 @@ import React from 'react';
 import { Contact } from '../types/Contact';
 import { 
   Mail, Phone, Building, MapPin, User, Edit, Trash2, 
-  Star, Eye, Calendar, Clock, StarOff 
+  Star, Eye, Calendar, Clock
 } from 'lucide-react';
 
 interface ContactCardProps {

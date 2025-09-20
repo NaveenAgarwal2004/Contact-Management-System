@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Contact, ContactFormData } from './types/Contact';
-import { contactsApi } from './services/api';
 import { ContactList } from './Components/ContactList';
 import { ContactForm } from './Components/ContactForm';
 import { SearchBar } from './Components/SearchBar';
 import { DeleteConfirmModal } from './Components/DeleteConfirmModal';
-import { Users, Plus, AlertCircle, Download, Upload, Settings, Sun, Moon, Sparkles, X } from 'lucide-react';
+import { Users, Plus, AlertCircle, Download, Settings, Sun, Moon, Sparkles, X } from 'lucide-react';
 
 function App() {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -26,7 +25,7 @@ function App() {
   const itemsPerPage = 12;
 
   // Load contacts
-  const loadContacts = useCallback(async (search?: string) => {
+  const loadContacts = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -131,6 +130,7 @@ function App() {
         const newContact: Contact = {
           id: `contact-${Date.now()}`,
           ...formData,
+          isFavorite: false,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         };
@@ -249,13 +249,16 @@ function App() {
     currentPage * itemsPerPage
   );
 
-  // Placeholder handlers for onToggleFavorite and onView
+  // Handlers for onToggleFavorite and onView
   const onToggleFavorite = (contact: Contact) => {
-    // Implement favorite toggle logic if needed
+    setContacts(prev => prev.map(c => 
+      c.id === contact.id ? { ...c, isFavorite: !c.isFavorite } : c
+    ));
   };
 
-  const onView = (contact: Contact) => {
-    // Implement view logic if needed
+  const onView = (_contact: Contact) => {
+    // TODO: Implement view logic - could open a detail modal
+    console.log('View contact:', _contact);
   };
 
   return (
